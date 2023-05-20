@@ -1,0 +1,1749 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-size: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body {
+    display: flex;
+    /* 上下固定 */
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #E7E7E7;
+}
+
+/* 新車 */
+.new-car {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3f3f3f;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
+.new-car.none {
+    scale: 0;
+    transition: 0.8s;
+}
+
+/* 中古車 */
+.secondhand-car {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3f3f3f;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
+.secondhand-car.none {
+    scale: 0;
+    transition: 0.8s;
+}
+
+/* 新車を押した上の案内 */
+
+.select-new-car {
+    position: relative;
+    top: 5%;
+    left: 1%;
+    text-align: left;
+    width: 10%;
+    background-color: #3f3f3f;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px 1px 1px 5px;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-new-car.up1 {
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    text-align: left;
+    width: 10%;
+    background-color: #3f3f3f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-new-car::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3f3f3f;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 新車-普通車ボタン */
+.new-car-standard-size-car {
+    scale: 0;
+    transition: 0.8s;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
+.new-car-standard-size-car.up1 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-軽自動車ボタン */
+.new-car-light-car {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.new-car-light-car.up1 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古車を押した上の案内 */
+
+.select-secondhand-car {
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    text-align: left;
+    width: 10%;
+    background-color: #3f3f3f;
+    border-radius: 5px 1px 1px 5px;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-secondhand-car.up2 {
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    text-align: left;
+    width: 10%;
+    background-color: #3f3f3f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-secondhand-car::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3f3f3f;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 中古-普通車ボタン */
+.secondhand-car-standard-size-car {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.secondhand-car-standard-size-car.up2 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-軽自動車ボタン */
+.secondhand-car-light-car {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.secondhand-car-light-car.up2 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #e45050;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+
+/* 新車-普通車を押した上の案内 */
+
+.select-new-car-standard-size-car {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-new-car-standard-size-car.up3 {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-new-car-standard-size-car::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #e45050;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 新車-普通車-現金ボタン */
+.new-car-standard-size-car-cash {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.new-car-standard-size-car-cash.up3 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-普通車-クレジットボタン */
+.new-car-standard-size-car-credit {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.new-car-standard-size-car-credit.up3 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-軽自動車を押した上の案内 */
+
+.select-new-car-light-car {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-new-car-light-car.up4 {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-new-car-light-car::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #e45050;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 新車-軽自動車-現金ボタン */
+.new-car-light-car-cash {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.new-car-light-car-cash.up4 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-軽自動車-クレジットボタン */
+.new-car-light-car-credit {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.new-car-light-car-credit.up4 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-普通車を押した上の案内 */
+
+.select-secondhand-car-standard-size-car {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-secondhand-car-standard-size-car.up5 {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-secondhand-car-standard-size-car::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #e45050;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 中古-普通車-現金ボタン */
+.secondhand-car-standard-size-car-cash {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.secondhand-car-standard-size-car-cash.up5 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-普通車-クレジットボタン */
+.secondhand-car-standard-size-car-credit {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.secondhand-car-standard-size-car-credit.up5 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+
+
+
+/* 中古-軽自動車を押した上の案内 */
+
+.select-secondhand-car-light-car {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-secondhand-car-light-car.up6 {
+    position: absolute;
+    top: 5%;
+    left: 11%;
+    text-align: left;
+    width: 10%;
+    background-color: #e45050;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-secondhand-car-light-car::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #e45050;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 中古-軽自動車-現金ボタン */
+.secondhand-car-light-car-cash {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.secondhand-car-light-car-cash.up6 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-軽自動車-クレジットボタン */
+.secondhand-car-light-car-credit {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.secondhand-car-light-car-credit.up6 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #3448ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+
+/* 新車-普通車-現金を押した上の案内 */
+
+.select-new-car-standard-size-car-cash {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-new-car-standard-size-car-cash.up7 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-new-car-standard-size-car-cash::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 新車-普通車-現金-希望ナンバー有ボタン */
+.new-car-standard-size-car-cash-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.new-car-standard-size-car-cash-hope-number-yes.up7 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-普通車-現金-希望ナンバー無しボタン */
+.new-car-standard-size-car-cash-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.new-car-standard-size-car-cash-hope-number-no.up7 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-普通車-クレジットを押した上の案内 */
+
+.select-new-car-standard-size-car-credit {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-new-car-standard-size-car-credit.up8 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-new-car-standard-size-car-credit::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 新車-普通車-クレジット-希望ナンバー有ボタン */
+.new-car-standard-size-car-credit-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.new-car-standard-size-car-credit-hope-number-yes.up8 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-普通車-クレジット-希望ナンバー無しボタン */
+.new-car-standard-size-car-credit-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.new-car-standard-size-car-credit-hope-number-no.up8 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-軽自動車-現金を押した上の案内 */
+
+.select-new-car-light-car-cash {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-new-car-light-car-cash.up9 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-new-car-light-car-cash::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 新車-軽自動車-現金-希望ナンバー有ボタン */
+.new-car-light-car-cash-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.new-car-light-car-cash-hope-number-yes.up9 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-軽自動車-現金-希望ナンバー無しボタン */
+.new-car-light-car-cash-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.new-car-light-car-cash-hope-number-no.up9 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-軽自動車-クレジットを押した上の案内 */
+
+.select-new-car-light-car-credit {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-new-car-light-car-credit.up10 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-new-car-light-car-credit::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 新車-軽自動車-クレジット-希望ナンバー有ボタン */
+.new-car-light-car-credit-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.new-car-light-car-credit-hope-number-yes.up10 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 新車-軽自動車-クレジット-希望ナンバー無しボタン */
+.new-car-light-car-credit-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.new-car-light-car-credit-hope-number-no.up10 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-普通車-現金を押した上の案内 */
+
+.select-secondhand-car-standard-size-car-cash {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-secondhand-car-standard-size-car-cash.up11 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-secondhand-car-standard-size-car-cash::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 中古-普通車-現金-希望ナンバー有ボタン */
+.secondhand-car-standard-size-car-cash-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.secondhand-car-standard-size-car-cash-hope-number-yes.up11 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-普通車-現金-希望ナンバー無しボタン */
+.secondhand-car-standard-size-car-cash-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.secondhand-car-standard-size-car-cash-hope-number-no.up11 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-普通車-クレジットを押した上の案内 */
+
+.select-secondhand-car-standard-size-car-credit {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-secondhand-car-standard-size-car-credit.up12 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-secondhand-car-standard-size-car-credit::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 中古-普通車-クレジット-希望ナンバー有ボタン */
+.secondhand-car-standard-size-car-credit-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.secondhand-car-standard-size-car-credit-hope-number-yes.up12 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-普通車-クレジット-希望ナンバー無しボタン */
+.secondhand-car-standard-size-car-credit-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.secondhand-car-standard-size-car-credit-hope-number-no.up12 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-軽自動車-現金を押した上の案内 */
+
+.select-secondhand-car-light-car-cash {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-secondhand-car-light-car-cash.up13 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-secondhand-car-light-car-cash::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 中古-軽自動車-現金-希望ナンバー有ボタン */
+.secondhand-car-light-car-cash-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.secondhand-car-light-car-cash-hope-number-yes.up13 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-軽自動車-現金-希望ナンバー無しボタン */
+.secondhand-car-light-car-cash-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.secondhand-car-light-car-cash-hope-number-no.up13 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-軽自動車-クレジットを押した上の案内 */
+
+.select-secondhand-car-light-car-credit {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.select-secondhand-car-light-car-credit.up14 {
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    text-align: left;
+    width: 10%;
+    background-color: #3448ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 23px 0;
+    font-size: 16px;
+    font-weight: bold;
+    scale: 1;
+    transition: 0.8s;
+
+}
+
+.select-secondhand-car-light-car-credit::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -35px;
+    border-left: 35px solid #3448ff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+
+}
+
+/* 中古-軽自動車-クレジット-希望ナンバー有ボタン */
+.secondhand-car-light-car-credit-hope-number-yes {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+
+}
+
+.secondhand-car-light-car-credit-hope-number-yes.up14 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
+
+/* 中古-軽自動車-クレジット-希望ナンバー無しボタン */
+.secondhand-car-light-car-credit-hope-number-no {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 0;
+    transition: 0.8s;
+}
+
+.secondhand-car-light-car-credit-hope-number-no.up14 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    background-color: #f2ff39;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #ffffff;
+    scale: 1;
+    transition: 0.8s;
+}
